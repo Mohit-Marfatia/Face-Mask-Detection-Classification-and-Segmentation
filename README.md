@@ -26,7 +26,17 @@ The objective of this project is to develop a computer vision solution for class
 - **Source**: 
   - Face Mask Detection Dataset: [GitHub Repository](https://github.com/chandrikadeb7/Face-Mask-Detection/tree/master/dataset)
   - Masked Face Segmentation Dataset: [GitHub Repository](https://github.com/sadjadrz/MFSD)
-- **Structure**: Contains images of people with and without face masks, along with ground truth segmentation masks
+# Dataset Details
+
+## Details
+The dataset consists of images categorized into two classes: individuals wearing masks and individuals without masks.
+## Structure
+.
+├── dataset
+│   ├── with_mask
+│   └── without_mask
+- With mask contains individuals wearing mask images
+- Without mask has individuals without mask images
 
 - **MFSD (Masked Face Segmentation Dataset)**
 - Source: Downloaded from Google Drive using the script in dataset/data_download.py
