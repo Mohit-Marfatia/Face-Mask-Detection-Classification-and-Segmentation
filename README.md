@@ -1,27 +1,26 @@
 # Face Mask Detection and Segmentation Project
 
 ## Introduction
-This project aims to develop a computer vision solution for classifying and segmenting face masks in images. It involves using both handcrafted features with machine learning classifiers and deep learning techniques to achieve accurate classification and segmentation.
+The objective of this project is to develop a computer vision solution for classifying and segmenting face masks in images. The approach involves using both traditional machine learning techniques with handcrafted features and deep learning models to achieve accurate classification and segmentation.
 
-## Objectives
+## Binary Classification Using Handcrafted Features and ML Classifiers
+- Extract handcrafted features from the dataset to represent image characteristics.
+- Train and evaluate at least two machine learning classifiers, such as Support Vector Machines (SVM) and Neural Networks, to distinguish between faces "with mask" and "without mask."
+- Compare the accuracy and performance of these classifiers.
 
-### a. Binary Classification Using Handcrafted Features and ML Classifiers (4 Marks)
-1. Extract handcrafted features from the dataset.
-2. Train and evaluate at least two machine learning classifiers (e.g., SVM, Neural Network) to classify faces as "with mask" or "without mask."
-3. Report and compare the accuracy of the classifiers.
+## Binary Classification Using CNN
+- Design and train a Convolutional Neural Network (CNN) for binary classification.
+- Experiment with hyper-parameter variations, such as learning rate, batch size, optimizer, and activation functions in the classification layer.
+- Compare CNN performance with the machine learning classifiers to determine effectiveness.
 
-### b. Binary Classification Using CNN (3 Marks)
-1. Design and train a Convolutional Neural Network (CNN) to perform binary classification on the same dataset.
-2. Experiment with different hyper-parameters (e.g., learning rate, batch size, optimizer, activation function in the classification layer) and report the results.
-3. Compare the CNN's performance with the ML classifiers.
+## Region Segmentation Using Traditional Techniques
+- Implement a region-based segmentation approach, such as thresholding or edge detection, to segment mask regions for faces identified as "with mask."
+- Visualize and evaluate the segmentation results.
 
-### c. Region Segmentation Using Traditional Techniques (3 Marks)
-1. Implement a region-based segmentation method (e.g., thresholding, edge detection) to segment the mask regions for faces identified as "with mask."
-2. Visualize and evaluate the segmentation results.
+## Mask Segmentation Using U-Net
+- Train a U-Net model for precise segmentation of mask regions in the images.
+- Compare the performance of U-Net with traditional segmentation techniques using metrics like Intersection over Union (IoU) or Dice score.
 
-### d. Mask Segmentation Using U-Net (5 Marks)
-1. Train a U-Net model for precise segmentation of mask regions in the images.
-2. Compare the performance of U-Net with the traditional segmentation method using metrics like IoU or Dice score.
    
 ## Dataset
 - **Source**: 
