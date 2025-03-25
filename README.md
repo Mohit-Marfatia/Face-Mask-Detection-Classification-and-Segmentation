@@ -9,6 +9,14 @@ This project aims to develop a computer vision solution for classifying and segm
   - Masked Face Segmentation Dataset: [GitHub Repository](https://github.com/sadjadrz/MFSD)
 - **Structure**: Contains images of people with and without face masks, along with ground truth segmentation masks
 
+- **MFSD (Masked Face Segmentation Dataset)**
+- Source: Downloaded from Google Drive using the script in dataset/data_download.py
+- Used for: Tasks 3 and 4 (Traditional segmentation and U-Net segmentation)
+- Structure:
+  - Contains original images of people wearing masks in MFSD_dataset/MSFD/1/face_crop
+  - Includes pixel-level ground truth segmentation masks in MFSD_dataset/MSFD/1/face_crop_segmentation
+  - Dataset information stored in MFSD_dataset/MSFD/1/dataset.csv
+
 ## Methodology for Traditional Segmentation (Part C)
 ## Experimental Approaches
 
@@ -139,3 +147,47 @@ Run the segmentation script:
 ```bash
 python src/segmentation.py
 ```
+
+### Task 4: U-Net Segmentation
+1. Model Architecture:
+   - Custom U-Net implementation defined in UNet class with:
+     - Encoder path with 4 blocks: [3→64, 64→128, 128→256, 256→512]
+     - Double convolution blocks with batch normalization and ReLU activation
+     - Decoder path with skip connections from encoder
+     - 2×2 max pooling in encoder and bilinear upsampling in decoder
+     - Final 1×1 convolution and sigmoid activation for binary mask output
+
+2. Training Approach:
+   - Input images and masks resized to 256×256
+   - Trained model loaded from checkpoint at epoch 10
+   - Evaluated using IoU and Dice score metrics
+   - Data loading with SegmentationDataset class for paired image-mask processing
+
+3. Visualization Results:
+   
+   U-Net Segmentation Comparison:  
+   The following image demonstrates better performance of U-Net segmentation as compared to traditional methods. The visualization shows original images (left side image), ground truth masks (middle image), and U-Net predicted masks (right side image).
+   
+   ![U-Net Segmentation Results](results/UNet_results/Output1.png)
+   ![U-Net Segmentation Results](results/UNet_results/Output2.png)
+   ![U-Net Segmentation Results](results/UNet_results/Output3.png)
+   ![U-Net Segmentation Results](results/UNet_results/Output4.png)
+   ![U-Net Segmentation Results](results/UNet_results/Output5.png)
+   
+   
+   As visible in these examples, U-Net consistently produces clean, accurate mask boundaries that closely match the ground truth masks, even in challenging cases with different mask types, colors, and lighting conditions. The high IoU (93.62%) and Dice (96.44%) scores reflect this qualitative observation.
+
+**NOTE** : Dataset was uploaded and code was executed on Kaggle due to non-availability of local GPU for execution.
+
+## How to Run the Code
+
+
+2. Create a virtual environment (optional but recommended)
+
+- Visit [Kaggle repository](https://www.kaggle.com/datasets/chiragdate/mfsd-dataset/data)
+- Create a new notebook using more options button.
+- Go to FILES and SELECT IMPORT NOTEBOOK
+- Add the UNet file link [Github repository](https://github.com/Mohit-Marfatia/Face-Mask-Detection-Classification-and-Segmentation/blob/5b5f9d88c2b18c1a8e4c532414f2e0f51ba4971c/src/UNet.ipynb)
+
+### Execution
+Run the ipynb file using run all button
