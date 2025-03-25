@@ -46,6 +46,81 @@ The dataset consists of images categorized into two classes: individuals wearing
   - Includes pixel-level ground truth segmentation masks in MFSD_dataset/MSFD/1/face_crop_segmentation
   - Dataset information stored in MFSD_dataset/MSFD/1/dataset.csv
 
+ # Binary Classification of Faces With and Without Masks
+
+## a. Binary Classification Using Handcrafted Features and ML Classifiers (4 Marks)
+
+### Methodology:
+1. **Dataset Preparation**:  
+   - Created a custom ImageDataset class to load images from the local directory.
+   - Analyzed images and found a mix of grayscale and 4-channel images.
+   - Converted all images to RGB and resized them to the mean size of **285x285**.
+   - Transformed dataset for consistency.
+
+2. **MLP on Raw Images**:  
+   - Trained a Multi-Layer Perceptron (MLP) using raw images as input (flattened vectors).
+   - Achieved **87% accuracy**.
+
+3. **Handcrafted Feature Extraction**:  
+   - Extracted **Histogram of Oriented Gradients (HOG)** and **Scale-Invariant Feature Transform (SIFT)** features.
+     - **HOG**: Captures the distribution of gradient orientations to encode shape and texture.
+     - **SIFT**: Detects key points and descriptors that are invariant to scale and rotation.
+   - Used these features to train two classifiers: **SVM (SVC)** and **MLP**.
+
+### Results:
+| Classifier | Accuracy |
+|------------|----------|
+| **SVM (SVC)** | **88.52%** |
+| **MLP** (Handcrafted Features) | **92.9%** |
+
+### Hyperparameters:
+- **MLP**: Optimizer - Adam, Learning Rate - 0.001, Batch Size - 200.
+- **SVM (SVC)**: Default settings.
+
+### Observations:
+- MLP performed better than SVC as it is a better function approximator.
+- Handcrafted features improved performance compared to raw image input.
+
+---
+
+## b. Binary Classification Using CNN (3 Marks)
+
+### Methodology:
+1. **CNN Architecture**:
+   - Designed a CNN model for classification.
+   - Initially used **average pooling** for flattening.
+   - Found **information loss** due to pooling, leading to **78% accuracy**.
+
+2. **Improved CNN**:
+   - Replaced **average pooling** with **flattening after max pooling**.
+   - Fully connected layers with input of size **24 × 35 × 35**.
+
+### Results:
+| Model | Accuracy |
+|--------|----------|
+| **CNN (Avg Pooling)** | **78%** |
+| **CNN (Max Pooling + Flattening)** | **95.38%** |
+
+### Hyperparameters:
+- **Optimizer**: Adam
+- **Learning Rate**: 0.001
+- **Epochs**: 13
+- **Tried Optimizers**: Adam, SGD (Adam converged faster)
+
+### Observations:
+- Adam optimizer led to **faster convergence**.
+- Max pooling with flattening **preserved information** better than average pooling.
+- CNN outperformed **SVM (88.52%)** and **MLP (92.9%)** in classification.
+
+---
+
+## Summary
+- **Handcrafted Features + MLP** (92.9%) performed better than **SVM (88.52%)**.
+- **CNN with max pooling** achieved the **best accuracy (95.38%)**.
+- **Adam optimizer** helped CNN converge **faster** than SGD.
+
+
+
 ## Methodology for Traditional Segmentation (Part C)
 ## Experimental Approaches
 
