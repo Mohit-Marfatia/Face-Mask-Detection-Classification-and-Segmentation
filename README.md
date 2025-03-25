@@ -81,6 +81,11 @@ The dataset consists of images categorized into two classes: individuals wearing
 - MLP performed better than SVC as it is a better function approximator.
 - Handcrafted features improved performance compared to raw image input.
 
+### SVM Classification Output  
+![SVM Output](outputs/svm_out.png)  
+### MLP Classification Output  
+![MLP Output](outputs/mlp_out.png)
+
 ---
 
 ## b. Binary Classification Using CNN
@@ -111,6 +116,9 @@ The dataset consists of images categorized into two classes: individuals wearing
 - Adam optimizer led to **faster convergence**.
 - Max pooling with flattening **preserved information** better than average pooling.
 - CNN outperformed **SVM (88.52%)** and **MLP (92.9%)** in classification.
+
+### CNN Classification Output  
+![CNN Output](outputs/cnn_out.png) 
 
 ---
 
