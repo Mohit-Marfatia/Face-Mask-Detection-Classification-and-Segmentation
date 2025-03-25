@@ -1,8 +1,28 @@
 # Face Mask Detection and Segmentation Project
 
 ## Introduction
-This project aims to develop a computer vision solution for classifying and segmenting face masks in images. The objective is to implement both traditional and deep learning techniques for mask detection and segmentation.
+This project aims to develop a computer vision solution for classifying and segmenting face masks in images. It involves using both handcrafted features with machine learning classifiers and deep learning techniques to achieve accurate classification and segmentation.
 
+## Objectives
+
+### a. Binary Classification Using Handcrafted Features and ML Classifiers (4 Marks)
+1. Extract handcrafted features from the dataset.
+2. Train and evaluate at least two machine learning classifiers (e.g., SVM, Neural Network) to classify faces as "with mask" or "without mask."
+3. Report and compare the accuracy of the classifiers.
+
+### b. Binary Classification Using CNN (3 Marks)
+1. Design and train a Convolutional Neural Network (CNN) to perform binary classification on the same dataset.
+2. Experiment with different hyper-parameters (e.g., learning rate, batch size, optimizer, activation function in the classification layer) and report the results.
+3. Compare the CNN's performance with the ML classifiers.
+
+### c. Region Segmentation Using Traditional Techniques (3 Marks)
+1. Implement a region-based segmentation method (e.g., thresholding, edge detection) to segment the mask regions for faces identified as "with mask."
+2. Visualize and evaluate the segmentation results.
+
+### d. Mask Segmentation Using U-Net (5 Marks)
+1. Train a U-Net model for precise segmentation of mask regions in the images.
+2. Compare the performance of U-Net with the traditional segmentation method using metrics like IoU or Dice score.
+   
 ## Dataset
 - **Source**: 
   - Face Mask Detection Dataset: [GitHub Repository](https://github.com/chandrikadeb7/Face-Mask-Detection/tree/master/dataset)
