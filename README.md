@@ -182,12 +182,27 @@ python src/segmentation.py
 ## How to Run the Code
 
 
-2. Create a virtual environment (optional but recommended)
-
 - Visit [Kaggle repository](https://www.kaggle.com/datasets/chiragdate/mfsd-dataset/data)
 - Create a new notebook using more options button.
 - Go to FILES and SELECT IMPORT NOTEBOOK
-- Add the UNet file link [Github repository](https://github.com/Mohit-Marfatia/Face-Mask-Detection-Classification-and-Segmentation/blob/5b5f9d88c2b18c1a8e4c532414f2e0f51ba4971c/src/UNet.ipynb)
+- Add the UNet.ipynb file link [Github repository](https://github.com/Mohit-Marfatia/Face-Mask-Detection-Classification-and-Segmentation/blob/5b5f9d88c2b18c1a8e4c532414f2e0f51ba4971c/src/UNet.ipynb)
 
 ### Execution
 Run the ipynb file using run all button
+
+### Comparison: Classification vs. Segmentation   
+  - UNet (Task 4) surpassed traditional segmentation (Task 3) by better identifying object boundaries.  
+  - Traditional methods showed acceptable recall but generally had lower precision.  
+
+### Pros & Cons  
+#### Classification  
+-  CNNs perform well on large datasets.  
+-  More tolerant of variations in image quality.   
+-  Requires more computational resources than traditional classifiers.  
+-  Deep models need more data to avoid overfitting.  
+
+#### Segmentation  
+-  UNet handles complex segmentation tasks effectively.  
+-  Performs well with occlusions and overlapping regions.  
+-  Needs a large annotated dataset for better performance.  
+-  Training takes longer and needs powerful hardware.  
