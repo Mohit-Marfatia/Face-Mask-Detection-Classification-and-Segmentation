@@ -114,13 +114,6 @@ The dataset consists of images categorized into two classes: individuals wearing
 
 ---
 
-## Summary
-- **Handcrafted Features + MLP** (92.9%) performed better than **SVM (88.52%)**.
-- **CNN with max pooling** achieved the **best accuracy (95.38%)**.
-- **Adam optimizer** helped CNN converge **faster** than SGD.
-
-
-
 ## Methodology for Traditional Segmentation (Part C)
 ## Experimental Approaches
 
@@ -294,9 +287,18 @@ python src/segmentation.py
 ### Execution
 Run the ipynb file using run all button
 
-### Comparison: Classification vs. Segmentation   
-  - UNet (Task 4) surpassed traditional segmentation (Task 3) by better identifying object boundaries.  
-  - Traditional methods showed acceptable recall but generally had lower precision.  
+## Comparison of Traditional Segmentation vs. U-Net
+### Traditional Segmentation:
+- Uses color thresholding (HSV, LAB), edge detection, or clustering (K-Means).
+- Requires manual tuning of parameters for different lighting conditions and backgrounds.
+- Performance is inconsistent across diverse datasets.
+- Computationally cheaper but lacks generalization.
+
+### U-Net Segmentation:
+- Deep learning-based segmentation with encoder-decoder architecture and skip connections.
+- Learns complex spatial and contextual relationships automatically.
+- Provides **higher accuracy** and **better boundary preservation** compared to traditional methods.
+- Computationally expensive but **generalizes well** to new data.  
 
 ### Pros & Cons  
 #### Classification  
@@ -310,3 +312,19 @@ Run the ipynb file using run all button
 -  Performs well with occlusions and overlapping regions.  
 -  Needs a large annotated dataset for better performance.  
 -  Training takes longer and needs powerful hardware.  
+
+# Summary  
+
+This project focused on face mask detection and segmentation using both traditional machine learning and deep learning approaches.  
+
+## Binary Classification  
+- **Handcrafted Features + MLP (92.9%)** outperformed **SVM (88.52%)**.  
+- **CNN with max pooling achieved the best accuracy (95.38%)**.  
+- The **Adam optimizer** enabled **faster convergence** compared to SGD.  
+
+## Traditional Segmentation vs. U-Net  
+- **Traditional segmentation** (HSV thresholding, LAB space, K-Means) faced challenges with color variations and inconsistencies, achieving an **average IoU of 57.19%**.  
+- **U-Net significantly outperformed traditional methods**, achieving:  
+  - **IoU:** 93.62%  
+  - **Dice Score:** 96.44%  
+- U-Net demonstrated superior ability in **boundary detection** and **mask segmentation**.  
