@@ -32,8 +32,8 @@ The objective of this project is to develop a computer vision solution for class
 The dataset consists of images categorized into two classes: individuals wearing masks and individuals without masks.
 ## Structure
 .
-├── dataset
-│   ├── with_mask
+├── dataset<br>
+│   ├── with_mask<br>
 │   └── without_mask
 - With mask contains individuals wearing mask images
 - Without mask has individuals without mask images
