@@ -115,7 +115,7 @@ The dataset consists of images categorized into two classes: individuals wearing
 ### Observations:
 - Adam optimizer led to **faster convergence**.
 - Max pooling with flattening **preserved information** better than average pooling.
-- CNN outperformed **SVM (88.52%)** and **MLP (92.9%)** in classification.
+- CNN outperformed **SVM (88.52%)** and **MLP (92.9%)** in classification with the best accuracy of 95.38%.
 
 ### CNN Classification Output  
 ![CNN Output](outputs/cnn_out.png) 
