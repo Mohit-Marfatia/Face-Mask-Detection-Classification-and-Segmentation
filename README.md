@@ -48,7 +48,7 @@ The dataset consists of images categorized into two classes: individuals wearing
 
  # Binary Classification of Faces With and Without Masks
 
-## a. Binary Classification Using Handcrafted Features and ML Classifiers (4 Marks)
+## a. Binary Classification Using Handcrafted Features and ML Classifiers 
 
 ### Methodology:
 1. **Dataset Preparation**:  
@@ -83,7 +83,7 @@ The dataset consists of images categorized into two classes: individuals wearing
 
 ---
 
-## b. Binary Classification Using CNN (3 Marks)
+## b. Binary Classification Using CNN
 
 ### Methodology:
 1. **CNN Architecture**:
